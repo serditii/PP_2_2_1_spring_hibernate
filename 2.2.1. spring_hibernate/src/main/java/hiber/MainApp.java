@@ -41,13 +41,9 @@ public class MainApp {
             System.out.println("Model = " + user.getCar().getModel());
             System.out.println("Series = " + user.getCar().getSeries());
         }
-
-        List<Car> cars = userService.listCars("Kia", 120);
-        for (Car car : cars) {
-            System.out.println("Id = " + car.getId());
-            System.out.println("First Name = " + car.getUser().getFirstName());
-            System.out.println("Last Name = " + car.getUser().getLastName());
-        }
+        User user = userService.userCar("Kia", 120);
+        System.out.println("First Name = " + user.getFirstName());
+        System.out.println("Last Name = " + user.getLastName());
 
         context.close();
     }
